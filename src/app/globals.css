@@ -7,9 +7,25 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-app-black: oklch(0.1549 0.0274 289.86);
+  --color-app-green: oklch(0.7303 0.1944 147.44);
+  --color-app-red: oklch(0.5845 0.2266 28.19);
+  --color-app-yellow: oklch(0.8134 0.1388 65.17);
+  --color-app-light-red: oklch(0.6382 0.2168 28.45);
+  --color-app-blue: oklch(0.7085 0.1497 234.8);
+  --color-app-gray: oklch(0.8884 0 0);
+  --color-text-gray: oklch(0.4532 0 0);
+  --color-light-gray: oklch(0.8185 0.0339 278.12);
+  --color-app-beige: oklch(0.7634 0.1447 38.53);
+  --color-chart-blue: oklch(0.6765 0.1706 262.18);
+  --color-btn-blue: oklch(0.7085 0.1497 234.8);
+  --color-border-dark: oklch(0.2975 0.0018 286.29);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
+  --font-sf-pro: var(--font-sf-pro);
+  --font-gilmer: var(--font-gilmer);
+  --font-chakra: var(--font-chakra);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -51,6 +67,19 @@
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+  --app-black: oklch(0.1549 0.0274 289.86); /* #0c0a17 */
+  --app-green: oklch(0.7303 0.1944 147.44); /* #34c759 */
+  --app-red: oklch(0.5845 0.2266 28.19); /* #E31D1C */
+  --app-yellow: oklch(0.8134 0.1388 65.17); /* #FFAE58 */
+  --app-light-red: oklch(0.6382 0.2168 28.45); /* #F34035 */
+  --app-blue: oklch(0.7085 0.1497 234.8); /* #01AEF0 */
+  --app-gray: oklch(0.8884 0 0); /* #DADADA */
+  --text-gray: oklch(0.4532 0 0); /* #565656 */
+  --light-gray: oklch(0.8185 0.0339 278.12); /* #bec2da */
+  --app-beige: oklch(0.7634 0.1447 38.53); /* #ff8f6b */
+  --chart-blue: oklch(0.6765 0.1706 262.18); /* #5b93ff */
+  --btn-blue: oklch(0.7085 0.1497 234.8); /* #01aef0 */
+  --border-dark: oklch(0.2975 0.0018 286.29); /* #2D2D2E */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -127,4 +156,44 @@
   html {
     @apply font-sans;
   }
+  
+.font-chakra {
+  font-family: var(--font-chakra, "Chakra Petch"), sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-chakra-light {
+  font-family: var(--font-chakra, "Chakra Petch"), sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.font-chakra-regular {
+  font-family: var(--font-chakra, "Chakra Petch"), sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-chakra-medium {
+  font-family: var(--font-chakra, "Chakra Petch"), sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.font-chakra-semibold {
+  font-family: var(--font-chakra, "Chakra Petch"), sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.font-chakra-bold {
+  font-family: var(--font-chakra, "Chakra Petch"), sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* optional italic helpers */
+.font-chakra-italic { font-style: italic; }
+
 }
