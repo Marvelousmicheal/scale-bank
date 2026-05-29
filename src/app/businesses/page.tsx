@@ -1,4 +1,5 @@
 import PageHeader from "@/components/PageHeader";
+import UsersModal from "@/components/modals/UsersModal";
 
 export default function BusinessesPage() {
   return (
@@ -6,6 +7,7 @@ export default function BusinessesPage() {
       <PageHeader
         title="Business Management"
         description="Manage all business Scale accounts."
+        modal={<UsersModal />}
       />
     </div>
   );
