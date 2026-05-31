@@ -34,7 +34,7 @@ export function Sidebar() {
         </div>
         <ul className="space-y-[15px] pr-1 pl-[33px]">
           {links.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
             return (
               <li key={link.name} className=" h-[36px] flex items-center ">
                 <Link 

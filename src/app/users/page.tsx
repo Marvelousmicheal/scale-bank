@@ -8,10 +8,11 @@ import {
 } from "@/components/ui/table";
 import UsersModal from "@/components/modals/UsersModal";
 import PageHeader from "@/components/PageHeader";
+import TablePagination from "@/components/TablePagination";
 
 export default function UsersPage() {
   return (
-    <div className="py-[46px] px-[30px] space-y-[34px]">
+    <div className="h-full flex flex-col pt-[46px] pb-[16px] px-[30px] gap-[34px]">
       <PageHeader
         title="User Management"
         description="Manage all consumer Scale accounts."
@@ -89,8 +90,8 @@ export default function UsersPage() {
         </div>
        
       </div>
-      <div>
-          <div className="w-full border border-light-gray/10 bg-app-black rounded-[12px] p-5">
+      <div className="flex-1 flex flex-col min-h-0 border border-light-gray/10 bg-app-black rounded-[12px] p-5">
+          <div className="flex-1 overflow-y-auto min-h-0">
             <Table className="border-separate border-spacing-y-[10px] p-0">
               <TableHeader>
                 <TableRow className="border-none hover:bg-transparent">
@@ -142,6 +143,7 @@ export default function UsersPage() {
               </TableBody>
             </Table>
           </div>
+          <TablePagination />
       </div>
     </div>
   );
