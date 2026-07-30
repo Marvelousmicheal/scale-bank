@@ -15,7 +15,7 @@ export default function PageHeader({ title, description, modal, backHref }: Page
         <div className="flex items-center gap-3">
           <Link
             href={backHref}
-            className="flex items-center justify-center size-8 rounded-[8px] border border-[#BEC2DA]/10 bg-[#090614] text-[#BEC2DA] hover:text-white transition-colors"
+            className="flex items-center justify-center size-8 rounded-[8px] border border-ink-soft/10 bg-surface-raised text-ink-soft hover:text-white transition-colors"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ export default function PageHeader({ title, description, modal, backHref }: Page
         </div>
         <div className="flex items-center gap-2.5">
           {modal}
-          <div className="bg-amber-200 size-[24px]"></div>
+          <div className="bg-app-yellow size-[24px]"></div>
         </div>
       </div>
     );
@@ -46,12 +46,12 @@ export default function PageHeader({ title, description, modal, backHref }: Page
       <div>
         <h1 className="text-2xl text-white font-bold font-sf-pro">{title}</h1>
         {description && (
-          <p className="text-base text-[#707EAE] font-medium font-sf-pro">{description}</p>
+          <p className="text-base text-ink-subtle font-medium font-sf-pro">{description}</p>
         )}
       </div>
       <div className="flex items-center gap-2.5">
         {modal}
-        <div className="bg-amber-200 size-[24px]"></div>
+        <div className="bg-app-yellow size-[24px]"></div>
       </div>
     </div>
   );

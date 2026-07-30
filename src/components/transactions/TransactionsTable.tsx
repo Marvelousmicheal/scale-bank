@@ -6,7 +6,7 @@ import { transactions, type TransactionStatus } from "@/lib/transaction-data";
 
 const statusStyles: Record<TransactionStatus, string> = {
   Success: "bg-app-green/5 text-app-green",
-  Reversed: "border border-[#8E8E93]/40 bg-[#2D2D2E]/60 text-[#DADADA]",
+  Reversed: "border border-ink-muted/40 bg-surface-neutral/60 text-ink-bright",
   Failed: "bg-app-red/5 text-app-red",
   Pending: "bg-app-yellow/5 text-app-yellow",
 };
@@ -36,15 +36,15 @@ export default function TransactionsTable() {
                 }}
                 className="h-[52px] cursor-pointer outline-none transition-colors hover:[&>td]:bg-white/[0.025] focus-visible:[&>td]:border-app-blue/60"
               >
-                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-[#090614] px-[15px] text-base font-bold text-white">{transaction.displayId}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-base text-[#565656]">{transaction.type}</td>
-                <td className="max-w-[285px] border-y border-light-gray/10 bg-[#090614] px-[15px] text-base text-[#565656]">{transaction.business}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-base text-white">{transaction.amount}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-base text-[#565656]">{transaction.fee}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-base text-[#BEC2DA]">
-                  <p>{transaction.date}</p><p className="text-xs text-[#565656]">{transaction.time}</p>
+                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-surface-raised px-[15px] text-base font-bold text-white">{transaction.displayId}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-base text-ink-dim">{transaction.type}</td>
+                <td className="max-w-[285px] border-y border-light-gray/10 bg-surface-raised px-[15px] text-base text-ink-dim">{transaction.business}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-base text-white">{transaction.amount}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-base text-ink-dim">{transaction.fee}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-base text-ink-soft">
+                  <p>{transaction.date}</p><p className="text-xs text-ink-dim">{transaction.time}</p>
                 </td>
-                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-[#090614] px-[15px]">
+                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-surface-raised px-[15px]">
                   <span className={`block w-[107px] rounded-[7px] px-2 py-1 text-center ${statusStyles[transaction.status]}`}>{transaction.status}</span>
                 </td>
               </tr>

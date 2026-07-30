@@ -7,7 +7,7 @@ import TablePagination from "@/components/TablePagination";
 const statusStyles: Record<TerminalStatus, string> = {
   Online: "bg-app-green/5 text-app-green",
   Suspended: "bg-app-yellow/5 text-app-yellow",
-  Unassigned: "bg-white/[0.03] text-[#8E8E93]",
+  Unassigned: "bg-white/[0.03] text-ink-muted",
 };
 
 export default function TerminalTable() {
@@ -41,26 +41,26 @@ export default function TerminalTable() {
                 }}
                 className="h-[52px] cursor-pointer text-base outline-none transition-colors hover:[&>td]:bg-white/[0.025] focus-visible:[&>td]:border-app-blue/60"
               >
-                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-[#090614] px-[15px] font-bold text-white">
+                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-surface-raised px-[15px] font-bold text-white">
                   {terminal.id}
                 </td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-[#565656]">
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-ink-dim">
                   {terminal.serialNumber}
                 </td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px]">
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px]">
                   <p className="font-bold text-white">{terminal.business}</p>
-                  <p className="text-[#565656]">{terminal.owner}</p>
+                  <p className="text-ink-dim">{terminal.owner}</p>
                 </td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] font-medium text-white">
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] font-medium text-white">
                   {terminal.location}
                 </td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] font-medium text-white">
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] font-medium text-white">
                   {terminal.todayVolume}
                 </td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-[#565656]">
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-ink-dim">
                   {terminal.lastActivity}
                 </td>
-                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-[#090614] px-[15px]">
+                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-surface-raised px-[15px]">
                   <span
                     className={`block w-[107px] rounded-[7px] px-2 py-1.5 text-center ${statusStyles[terminal.status]}`}
                   >

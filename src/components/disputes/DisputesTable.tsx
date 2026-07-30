@@ -11,7 +11,7 @@ const statusStyles: Record<DisputeStatus, string> = {
   Rejected: "bg-app-red/5 text-app-red",
 };
 const priorityStyles: Record<Priority, string> = {
-  Low: "text-[#8E8E93]", Medium: "text-app-yellow", High: "text-[#7651FF]", Critical: "text-[#FF4747]",
+  Low: "text-ink-muted", Medium: "text-app-yellow", High: "text-accent-violet", Critical: "text-accent-critical",
 };
 
 export default function DisputesTable() {
@@ -26,14 +26,14 @@ export default function DisputesTable() {
           <tbody>
             {disputes.map((dispute) => (
               <tr key={dispute.slug} tabIndex={0} onClick={() => router.push(`/dispute-and-compliance/${dispute.slug}`)} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") router.push(`/dispute-and-compliance/${dispute.slug}`); }} className="h-[52px] cursor-pointer outline-none hover:[&>td]:bg-white/[0.025] focus-visible:[&>td]:border-app-blue/60">
-                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-[#090614] px-[15px] text-base font-bold">{dispute.disputeId}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-base font-bold">{dispute.transactionId}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px]"><p className="text-sm text-[#BEC2DA]">{dispute.user}</p><p className="text-xs text-[#565656]">{dispute.business}</p></td>
-                <td className="max-w-[170px] border-y border-light-gray/10 bg-[#090614] px-[15px] text-base text-[#565656]">{dispute.type}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-base">{dispute.amount}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-sm text-[#BEC2DA]"><p>03.02.2026</p><p className="text-xs text-[#565656]">12:45 PM</p></td>
-                <td className={`border-y border-light-gray/10 bg-[#090614] px-[15px] text-base font-bold ${priorityStyles[dispute.priority]}`}>{dispute.priority}</td>
-                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-[#090614] px-[15px]"><span className={`block w-[107px] rounded-[7px] px-2 py-1 text-center ${statusStyles[dispute.status]}`}>{dispute.status}</span></td>
+                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-surface-raised px-[15px] text-base font-bold">{dispute.disputeId}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-base font-bold">{dispute.transactionId}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px]"><p className="text-sm text-ink-soft">{dispute.user}</p><p className="text-xs text-ink-dim">{dispute.business}</p></td>
+                <td className="max-w-[170px] border-y border-light-gray/10 bg-surface-raised px-[15px] text-base text-ink-dim">{dispute.type}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-base">{dispute.amount}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-sm text-ink-soft"><p>03.02.2026</p><p className="text-xs text-ink-dim">12:45 PM</p></td>
+                <td className={`border-y border-light-gray/10 bg-surface-raised px-[15px] text-base font-bold ${priorityStyles[dispute.priority]}`}>{dispute.priority}</td>
+                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-surface-raised px-[15px]"><span className={`block w-[107px] rounded-[7px] px-2 py-1 text-center ${statusStyles[dispute.status]}`}>{dispute.status}</span></td>
               </tr>
             ))}
           </tbody>

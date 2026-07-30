@@ -81,9 +81,9 @@ function Filter({
 }) {
   const Icon = calendar ? CalendarDays : ChevronDown;
   return (
-    <button className="flex h-[45px] flex-1 items-center justify-between rounded-[8px] border border-light-gray/10 bg-[#090614] px-[15px] font-sf-pro text-sm font-bold text-[#8E8E93]">
+    <button className="flex h-[45px] flex-1 items-center justify-between rounded-[8px] border border-light-gray/10 bg-surface-raised px-[15px] font-sf-pro text-sm font-bold text-ink-muted">
       {children}
-      <Icon className="size-5 text-[#BEC2DA]" />
+      <Icon className="size-5 text-ink-soft" />
     </button>
   );
 }
@@ -102,9 +102,9 @@ export default async function BusinessDetailPage({
 
       <section className="grid min-h-[241px] grid-cols-[1fr_282px] gap-[15px] rounded-[12px] border border-light-gray/10 bg-app-black p-[15px]">
         <div className="flex flex-col gap-5">
-          <div className="flex min-h-[90px] items-center justify-between rounded-[12px] border border-light-gray/10 bg-[#090614] px-[15px] py-3.5">
+          <div className="flex min-h-[90px] items-center justify-between rounded-[12px] border border-light-gray/10 bg-surface-raised px-[15px] py-3.5">
             <div className="flex items-center gap-2.5">
-              <div className="relative flex size-[60px] items-center justify-center rounded-full bg-[linear-gradient(145deg,#ec2d22,#5b0a12)]">
+              <div className="relative flex size-[60px] items-center justify-center rounded-full bg-danger-gradient">
                 <Building2 className="size-7 text-white" />
                 <BadgeCheck className="absolute -bottom-1 -right-1 size-6 text-app-green" fill="currentColor" />
               </div>
@@ -114,13 +114,13 @@ export default async function BusinessDetailPage({
                   <FileBadge className="size-5 text-app-yellow" />
                   <span className="font-sf-pro text-sm font-medium text-app-yellow">Pending KYB</span>
                 </div>
-                <p className="font-sf-pro text-sm text-[#8E8E93]">
+                <p className="font-sf-pro text-sm text-ink-muted">
                   ID:TX-78020
-                  <span className="ml-3">Tier: <b className="text-base text-[#BEC2DA]">{business.tier}</b></span>
+                  <span className="ml-3">Tier: <b className="text-base text-ink-soft">{business.tier}</b></span>
                 </p>
-                <p className="font-sf-pro text-sm text-[#8E8E93]">
-                  Owner: <b className="text-base text-[#BEC2DA]">{business.owner}</b>
-                  <span className="ml-2 text-[#565656]">{business.email}</span>
+                <p className="font-sf-pro text-sm text-ink-muted">
+                  Owner: <b className="text-base text-ink-soft">{business.owner}</b>
+                  <span className="ml-2 text-ink-dim">{business.email}</span>
                 </p>
               </div>
             </div>
@@ -128,7 +128,7 @@ export default async function BusinessDetailPage({
               <button className="flex h-11 items-center gap-2.5 rounded-[12px] bg-app-red/15 px-[15px] font-sf-pro text-base font-bold text-app-red">
                 Suspend <CircleAlert className="size-6" fill="currentColor" />
               </button>
-              <button className="flex h-11 items-center gap-2.5 rounded-[12px] bg-[#2999dc] px-[15px] font-sf-pro text-base font-bold text-white">
+              <button className="flex h-11 items-center gap-2.5 rounded-[12px] bg-action-blue px-[15px] font-sf-pro text-base font-bold text-white">
                 Approve KYC <ShieldCheck className="size-6" fill="currentColor" />
               </button>
             </div>
@@ -144,14 +144,14 @@ export default async function BusinessDetailPage({
                 key={metric.label}
                 className={`relative rounded-[20px] border border-light-gray/5 px-[25px] py-[18px] ${
                   metric.featured
-                    ? "border-app-green/20 bg-[linear-gradient(135deg,rgba(16,151,50,0.3)_70%,#1C1C1E_100%)]"
-                    : "bg-[#090614]"
+                    ? "border-app-green/20 bg-metric-featured"
+                    : "bg-surface-raised"
                 }`}
               >
                 <p className="font-sf-pro text-sm font-medium text-white">{metric.label}</p>
                 <p className={`font-sf-pro text-2xl font-bold ${metric.featured ? "text-white" : "text-app-green"}`}>{metric.value}</p>
                 {metric.note && (
-                  <span className={`absolute bottom-[31px] right-[15px] font-sf-pro text-xs ${metric.note.startsWith("+") ? "text-app-green" : "text-[#8E8E93]"}`}>
+                  <span className={`absolute bottom-[31px] right-[15px] font-sf-pro text-xs ${metric.note.startsWith("+") ? "text-app-green" : "text-ink-muted"}`}>
                     {metric.note}
                   </span>
                 )}
@@ -160,23 +160,23 @@ export default async function BusinessDetailPage({
           </div>
         </div>
 
-        <aside className="flex flex-col justify-between rounded-[20px] bg-[#412CDD] p-[15px]">
+        <aside className="flex flex-col justify-between rounded-[20px] bg-action-indigo p-[15px]">
           <div className="flex items-center justify-between">
-            <p className="font-sf-pro text-sm text-[#DADADA]">Current Balance</p>
+            <p className="font-sf-pro text-sm text-ink-bright">Current Balance</p>
             <WalletCards className="size-6 text-white" fill="currentColor" />
           </div>
           <p className="font-sf-pro text-[32px] font-bold text-white">₦12,400,000</p>
           <div className="flex items-end justify-between">
             <div>
-              <p className="font-sf-pro text-sm text-[#BEC2DA]/65">Pending Settlement</p>
-              <p className="font-sf-pro text-base font-bold text-[#BEC2DA]">₦1,200,000</p>
+              <p className="font-sf-pro text-sm text-ink-soft/65">Pending Settlement</p>
+              <p className="font-sf-pro text-base font-bold text-ink-soft">₦1,200,000</p>
             </div>
             <div>
-              <p className="font-sf-pro text-sm text-[#BEC2DA]/65">Settlement</p>
-              <p className="font-sf-pro text-base font-bold text-[#BEC2DA]">T+1</p>
+              <p className="font-sf-pro text-sm text-ink-soft/65">Settlement</p>
+              <p className="font-sf-pro text-base font-bold text-ink-soft">T+1</p>
             </div>
           </div>
-          <button className="h-[45px] rounded-[12px] bg-[#F2F2F7] font-sf-pro text-base font-bold text-[#1E88CF]">Settle Now</button>
+          <button className="h-[45px] rounded-[12px] bg-ink-pale font-sf-pro text-base font-bold text-action-sky">Settle Now</button>
         </aside>
       </section>
 
@@ -187,14 +187,14 @@ export default async function BusinessDetailPage({
             {documents.map((document) => {
               const Icon = document.icon;
               return (
-                <div key={document.name} className="flex h-12 items-center justify-between rounded-[8px] border border-light-gray/10 bg-[#090614] px-[15px]">
+                <div key={document.name} className="flex h-12 items-center justify-between rounded-[8px] border border-light-gray/10 bg-surface-raised px-[15px]">
                   <div className="flex items-center gap-3">
                     <Icon className="size-5 text-app-blue" />
                     <span className="font-sf-pro text-base font-bold text-white">{document.name}</span>
                   </div>
                   <div className="flex items-center gap-7">
                     {document.state === "Verified" ? (
-                      <span className="flex size-5 items-center justify-center rounded-full bg-app-green text-[#090614]"><Check className="size-3.5" /></span>
+                      <span className="flex size-5 items-center justify-center rounded-full bg-app-green text-surface-raised"><Check className="size-3.5" /></span>
                     ) : (
                       <FileBadge className="size-5 text-app-yellow" />
                     )}
@@ -213,13 +213,13 @@ export default async function BusinessDetailPage({
           </div>
           <div className="grid grid-cols-3 gap-2.5">
             {terminals.map((terminal) => (
-              <div key={terminal.id} className="flex h-12 items-center gap-2.5 rounded-[8px] border border-light-gray/10 bg-[#201E29] px-2.5">
+              <div key={terminal.id} className="flex h-12 items-center gap-2.5 rounded-[8px] border border-light-gray/10 bg-panel-tint px-2.5">
                 <CreditCard className="size-5 shrink-0 text-white" fill="currentColor" />
                 <div className="min-w-0 flex-1">
                   <p className="truncate font-sf-pro text-sm font-bold text-white">{terminal.location}</p>
-                  <p className="truncate font-sf-pro text-xs text-[#BEC2DA]">ID: {terminal.id}</p>
+                  <p className="truncate font-sf-pro text-xs text-ink-soft">ID: {terminal.id}</p>
                 </div>
-                <span className={`size-2 rounded-full ${terminal.status === "online" ? "bg-app-green" : terminal.status === "warning" ? "bg-app-yellow" : "bg-[#8E8E93]"}`} />
+                <span className={`size-2 rounded-full ${terminal.status === "online" ? "bg-app-green" : terminal.status === "warning" ? "bg-app-yellow" : "bg-ink-muted"}`} />
               </div>
             ))}
           </div>
@@ -233,9 +233,9 @@ export default async function BusinessDetailPage({
             Export <Download className="size-5" />
           </button>
         </div>
-        <label className="flex h-[30px] items-center gap-2.5 rounded-[8px] border border-light-gray/10 bg-[#090614] px-2.5">
-          <Search className="size-5 text-[#BEC2DA]" />
-          <input className="flex-1 bg-transparent font-sf-pro text-sm text-white outline-none placeholder:text-[#8E8E93]" placeholder="Search by business name, owner, or business ID" />
+        <label className="flex h-[30px] items-center gap-2.5 rounded-[8px] border border-light-gray/10 bg-surface-raised px-2.5">
+          <Search className="size-5 text-ink-soft" />
+          <input className="flex-1 bg-transparent font-sf-pro text-sm text-white outline-none placeholder:text-ink-muted" placeholder="Search by business name, owner, or business ID" />
         </label>
         <div className="mt-5 flex gap-5">
           <Filter>Channel</Filter>
@@ -261,12 +261,12 @@ export default async function BusinessDetailPage({
           <tbody>
             {transactions.map((transaction) => (
               <tr key={transaction.id} className="h-[43px]">
-                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-[#090614] px-[15px] font-bold text-white">{transaction.id}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-[#565656]">{transaction.channel}</td>
-                <td className="max-w-[260px] border-y border-light-gray/10 bg-[#090614] px-[15px] text-[#565656]">{transaction.business}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-white">{transaction.amount}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-[#BEC2DA]">{transaction.time}</td>
-                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-[#090614] px-[15px]">
+                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-surface-raised px-[15px] font-bold text-white">{transaction.id}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-ink-dim">{transaction.channel}</td>
+                <td className="max-w-[260px] border-y border-light-gray/10 bg-surface-raised px-[15px] text-ink-dim">{transaction.business}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-white">{transaction.amount}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-ink-soft">{transaction.time}</td>
+                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-surface-raised px-[15px]">
                   <span className={`ml-auto block w-[107px] rounded-[7px] px-2 py-1 text-center ${transaction.status === "Success" ? "bg-app-green/5 text-app-green" : "bg-app-red/5 text-app-red"}`}>{transaction.status}</span>
                 </td>
               </tr>
@@ -281,8 +281,8 @@ export default async function BusinessDetailPage({
         <div className="grid grid-cols-2 gap-x-6 gap-y-2.5">
           {["Logout", "Initiated Transaction", "Logout", "Initiated Transaction", "Logout", "Initiated Transaction", "Login", "Changed password", "Login", "Changed password"].map((activity, index) => (
             <div key={`${activity}-${index}`} className="flex items-center gap-3 font-sf-pro text-xs">
-              <span className="text-[#8E8E93]">13:10</span>
-              <span className="flex-1 rounded-[7px] border border-light-gray/10 bg-[#090614] px-2 py-1.5 text-app-yellow">{activity}</span>
+              <span className="text-ink-muted">13:10</span>
+              <span className="flex-1 rounded-[7px] border border-light-gray/10 bg-surface-raised px-2 py-1.5 text-app-yellow">{activity}</span>
             </div>
           ))}
         </div>

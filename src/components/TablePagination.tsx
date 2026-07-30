@@ -9,7 +9,7 @@ export default function TablePagination({
 }) {
   return (
     <div className="flex items-center justify-between pt-4">
-      <p className="font-sf-pro font-bold text-sm text-[#DADADA]">{showing}</p>
+      <p className="font-sf-pro font-bold text-sm text-ink-bright">{showing}</p>
       <div className="flex items-center gap-5">
         <div className="px-2.5 py-1.5 bg-app-green/5 w-[75px] text-center h-[30px] rounded-[7px]">
           <p className="font-normal text-sm text-app-green/50 font-sf-pro">Previous</p>
@@ -20,8 +20,8 @@ export default function TablePagination({
               key={page}
               className={`size-[37px] text-center flex items-center justify-center rounded-[8px] ${
                 page === current
-                  ? "bg-[#6C57E4]"
-                  : "bg-[#090614] border border-[#BEC2DA]/10"
+                  ? "bg-accent-purple"
+                  : "bg-surface-raised border border-ink-soft/10"
               }`}
             >
               <p className="font-sf-pro font-bold text-sm text-white">{page}</p>

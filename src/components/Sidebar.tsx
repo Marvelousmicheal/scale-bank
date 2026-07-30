@@ -34,12 +34,12 @@ export function Sidebar() {
     <aside className=" h-screen w-[290px]  bg-app-black text-light-gray flex flex-col  ">
       <nav className="flex-1 overflow-y-auto">
         <div className=" mb-[38px] h-[130px] border-b border-border-dark flex items-center justify-center text-white ">
-          <Image 
-            src="/image/logo.svg" 
-            alt="Scale Bank Logo" 
-            width={101} 
-            height={40} 
-            priority 
+          <Image
+            src="/image/logo.svg"
+            alt="Scale Bank Logo"
+            width={101}
+            height={40}
+            priority
           />
         </div>
         <ul className="space-y-[15px] pr-1 pl-[33px]">
@@ -47,12 +47,12 @@ export function Sidebar() {
             const isActive = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
             return (
               <li key={link.name} className=" h-[36px] flex items-center ">
-                <Link 
-                  href={link.href} 
+                <Link
+                  href={link.href}
                   className={`font-sf-pro ${isActive ? 'font-bold text-app-green' : 'font-medium text-white'} text-[18px] leading-[30px] flex items-center justify-between w-full transition-colors`}
                 >
                   <div className='flex items-center gap-[10px]'>
-                    <div className='w-[24px] h-[24px] bg-red-500'></div>
+                    <div className='w-[24px] h-[24px] bg-app-red'></div>
                     {link.name}
                   </div>
                   {isActive && <div className='h-[36px] w-[4px] rounded-[25px] bg-app-green'/>}
@@ -64,11 +64,11 @@ export function Sidebar() {
       </nav>
 
       <div className="mb-10 pt-4  ">
-        <Link 
-          href="/login" 
-          className="flex gap-2.5 w-[258px] bg-app-light-red/15 rounded-[10px] mx-auto  px-3 h-[45px] text-app-light-red  items-center text-base font-gilmer "
+        <Link
+          href="/login"
+          className="flex gap-2.5 w-[258px] bg-app-light-red/15 rounded-[10px] mx-auto  px-3 h-[45px] text-app-light-red  items-center text-base font-sf-pro "
         >
-          <div className='w-[24px] h-[24px] bg-red-500'></div>
+          <div className='w-[24px] h-[24px] bg-app-red'></div>
           Logout
         </Link>
       </div>

@@ -1,10 +1,10 @@
-import { 
-  Table, 
-  TableBody, 
-  TableCell, 
-  TableHead, 
-  TableHeader, 
-  TableRow 
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
 } from "@/components/ui/table"
 
 export default function DashboardPage() {
@@ -12,7 +12,7 @@ export default function DashboardPage() {
     <div className="py-[46px] px-[30px] space-y-[34px]">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-sm text-[#707EAE] font-bold font-sf-pro ">
+          <h1 className="text-sm text-ink-subtle font-bold font-sf-pro ">
             Hi Admin
           </h1>
           <p className="text-[34px] text-white font-bold font-sf-pro ">
@@ -20,8 +20,8 @@ export default function DashboardPage() {
           </p>
         </div>
         <div className="flex items-center gap-2.5">
-          <div className="bg-green-400 rounded-full size-[32px]"></div>
-          <div className="bg-amber-200 size-[24px] "></div>
+          <div className="bg-app-green rounded-full size-[32px]"></div>
+          <div className="bg-app-yellow size-[24px] "></div>
         </div>
       </div>
       <div className="space-y-5">
@@ -34,13 +34,13 @@ export default function DashboardPage() {
               <p className="text-base text-app-blue font-bold font-sf-pro ">
                 Daily
               </p>
-              <p className="text-base text-[#8E8E93] font-normal font-sf-pro ">
+              <p className="text-base text-ink-muted font-normal font-sf-pro ">
                 Weekly
               </p>
-              <p className="text-base text-[#8E8E93] font-normal font-sf-pro ">
+              <p className="text-base text-ink-muted font-normal font-sf-pro ">
                 Monthly
               </p>
-              <p className="text-base text-[#8E8E93] font-normal font-sf-pro ">
+              <p className="text-base text-ink-muted font-normal font-sf-pro ">
                 Yearly
               </p>
             </div>
@@ -50,7 +50,7 @@ export default function DashboardPage() {
               className="w-[210px]  px-[25px] py-[18px] rounded-[20px] flex flex-1 flex-col gap-0.5 border border-app-green/20 "
               style={{
                 background:
-                  "linear-gradient(135deg, rgba(16, 151, 50, 0.3) 70%, #1C1C1E 100%)",
+                  "var(--metric-featured)",
               }}
             >
               <p className="text-sm text-white font-medium font-sf-pro ">
@@ -98,7 +98,7 @@ export default function DashboardPage() {
           <div className="flex-1 h-[400px] bg-app-black rounded-[20px]"></div>
           <div className="w-[400px] h-[400px] bg-app-black rounded-[20px] p-[25px] flex flex-col gap-6">
             <div className="flex flex-col gap-1">
-              <p className="text-sm text-[#707EAE] font-bold font-sf-pro">
+              <p className="text-sm text-ink-subtle font-bold font-sf-pro">
                 SETTLEMENTS
               </p>
               <p className="text-2xl text-white font-bold font-sf-pro">
@@ -107,36 +107,36 @@ export default function DashboardPage() {
             </div>
 
             <div className="flex-1 flex flex-col justify-center items-center gap-8">
-              {/* Simple Donut Chart Mock */}
+
               <div className="relative size-48">
                 <svg className="size-full -rotate-90" viewBox="0 0 100 100">
-                  {/* Background Circle */}
+
                   <circle
                     cx="50"
                     cy="50"
                     r="40"
                     fill="none"
-                    stroke="rgba(255,255,255,0.05)"
+                    stroke="var(--surface-overlay)"
                     strokeWidth="12"
                   />
-                  {/* Success Fragment */}
+
                   <circle
                     cx="50"
                     cy="50"
                     r="40"
                     fill="none"
-                    stroke="oklch(0.7303 0.1944 147.44)"
+                    stroke="var(--app-green)"
                     strokeWidth="12"
                     strokeDasharray="180 251.2"
                     strokeLinecap="round"
                   />
-                  {/* Pending Fragment */}
+
                   <circle
                     cx="50"
                     cy="50"
                     r="40"
                     fill="none"
-                    stroke="oklch(0.8134 0.1388 65.17)"
+                    stroke="var(--app-yellow)"
                     strokeWidth="12"
                     strokeDasharray="40 251.2"
                     strokeDashoffset="-185"
@@ -147,7 +147,7 @@ export default function DashboardPage() {
                   <p className="text-3xl text-white font-bold font-sf-pro">
                     88%
                   </p>
-                  <p className="text-xs text-[#707EAE] font-medium font-sf-pro">
+                  <p className="text-xs text-ink-subtle font-medium font-sf-pro">
                     Success Rate
                   </p>
                 </div>
@@ -266,7 +266,7 @@ export default function DashboardPage() {
 
                     <p className=" text-sm text-white font-sf-pro">9</p>
                   </div>
-                  <p className="font-bold text-sm font-sf-pro text-[#F43938]">
+                  <p className="font-bold text-sm font-sf-pro text-app-light-red">
                     3 high priority
                   </p>
                 </div>
@@ -291,7 +291,7 @@ export default function DashboardPage() {
               </div>
               <div className="p-2.5 flex justify-between items-center ">
                 <div className="flex items-center gap-2.5">
-                  <div className="bg-[#8E8E93] rounded-[5px] w-[12.21px] h-[12.68px]" />
+                  <div className="bg-ink-muted rounded-[5px] w-[12.21px] h-[12.68px]" />
                   <p className="text-sm text-white font-bold font-sf-pro">
                     Offline
                   </p>
@@ -356,26 +356,26 @@ export default function DashboardPage() {
                   { id: 'TX-789038', channel: 'POS Terminal', business: 'Chicken Republic', amount: '₦184,300,500', time: '2m ago', status: 'Success' },
                 ].map((tx, i) => (
                   <TableRow key={i} className="border-none hover:bg-transparent group h-[43px]">
-                    <TableCell className="bg-[#090614] border-y border-l border-[#BEC2DA]/10 rounded-l-[8px] px-[15px] text-base font-bold text-white font-sf-pro">
+                    <TableCell className="bg-surface-raised border-y border-l border-ink-soft/10 rounded-l-[8px] px-[15px] text-base font-bold text-white font-sf-pro">
                       {tx.id}
                     </TableCell>
-                    <TableCell className="bg-[#090614] border-y border-[#BEC2DA]/10 px-[15px] text-base font-normal text-[#565656] font-sf-pro">
+                    <TableCell className="bg-surface-raised border-y border-ink-soft/10 px-[15px] text-base font-normal text-ink-dim font-sf-pro">
                       {tx.channel}
                     </TableCell>
-                    <TableCell className="bg-[#090614] border-y border-[#BEC2DA]/10 px-[15px] text-base font-normal text-[#565656] font-sf-pro">
+                    <TableCell className="bg-surface-raised border-y border-ink-soft/10 px-[15px] text-base font-normal text-ink-dim font-sf-pro">
                       {tx.business}
                     </TableCell>
-                    <TableCell className="bg-[#090614] border-y border-[#BEC2DA]/10 px-[15px] text-base font-medium text-white font-sf-pro">
+                    <TableCell className="bg-surface-raised border-y border-ink-soft/10 px-[15px] text-base font-medium text-white font-sf-pro">
                       {tx.amount}
                     </TableCell>
-                    <TableCell className="bg-[#090614] border-y border-[#BEC2DA]/10 px-[15px] text-base font-normal text-[#BEC2DA] font-sf-pro">
+                    <TableCell className="bg-surface-raised border-y border-ink-soft/10 px-[15px] text-base font-normal text-ink-soft font-sf-pro">
                       {tx.time}
                     </TableCell>
-                    <TableCell className="bg-[#090614] border-y border-r border-[#BEC2DA]/10 rounded-r-[8px] px-[15px]">
+                    <TableCell className="bg-surface-raised border-y border-r border-ink-soft/10 rounded-r-[8px] px-[15px]">
                       <div className="flex justify-end">
                         <div className={`w-[107px] rounded-[7px] p-[6px] text-center text-base font-normal font-sf-pro ${
-                          tx.status === 'Success' 
-                          ? 'text-app-green bg-app-green/5' 
+                          tx.status === 'Success'
+                          ? 'text-app-green bg-app-green/5'
                           : 'text-app-red bg-app-red/5'
                         }`}>
                           {tx.status}

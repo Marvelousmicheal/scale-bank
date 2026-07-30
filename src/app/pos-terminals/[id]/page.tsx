@@ -39,7 +39,7 @@ export default async function POSTerminalDetailsPage({
 
       <section className="grid min-h-[252px] grid-cols-[1fr_282px] gap-[15px] rounded-[12px] border border-light-gray/10 bg-app-black p-[15px]">
         <div className="flex flex-col gap-5">
-          <div className="flex min-h-[108px] items-center justify-between rounded-[12px] border border-light-gray/10 bg-[#090614] px-[15px] py-4">
+          <div className="flex min-h-[108px] items-center justify-between rounded-[12px] border border-light-gray/10 bg-surface-raised px-[15px] py-4">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <h1 className="font-sf-pro text-base font-bold text-white">{terminal.id}</h1>
@@ -47,18 +47,18 @@ export default async function POSTerminalDetailsPage({
                   Active
                 </span>
               </div>
-              <p className="font-sf-pro text-sm text-[#8E8E93]">
+              <p className="font-sf-pro text-sm text-ink-muted">
                 ScanBank POS S1
-                <span className="ml-3">Device Model: <b className="text-[#BEC2DA]">ScanBank POS S1</b></span>
+                <span className="ml-3">Device Model: <b className="text-ink-soft">ScanBank POS S1</b></span>
               </p>
-              <div className="flex items-center gap-3 font-sf-pro text-sm text-[#8E8E93]">
-                <span>{terminal.serialNumber}: <b className="text-[#BEC2DA]">{terminal.firmware}</b></span>
+              <div className="flex items-center gap-3 font-sf-pro text-sm text-ink-muted">
+                <span>{terminal.serialNumber}: <b className="text-ink-soft">{terminal.firmware}</b></span>
                 <span className="flex items-center gap-1.5"><BatteryMedium className="size-5 text-app-blue" />{terminal.battery}%</span>
                 <span className="flex items-center gap-1.5 font-bold text-white"><Wifi className="size-5 text-app-green" />{terminal.signal}</span>
               </div>
             </div>
             <div className="flex gap-2.5">
-              <button className="flex h-11 items-center gap-2 rounded-[12px] bg-[#2999dc] px-[15px] font-sf-pro font-bold text-white">
+              <button className="flex h-11 items-center gap-2 rounded-[12px] bg-action-blue px-[15px] font-sf-pro font-bold text-white">
                 Update FW <ShieldCheck className="size-5" />
               </button>
               <button className="flex h-11 items-center gap-2 rounded-[12px] bg-app-red/20 px-[15px] font-sf-pro font-bold text-app-red">
@@ -77,8 +77,8 @@ export default async function POSTerminalDetailsPage({
                 key={metric.label}
                 className={`relative rounded-[20px] border border-light-gray/5 px-[25px] py-[18px] ${
                   metric.featured
-                    ? "border-app-green/20 bg-[linear-gradient(135deg,rgba(16,151,50,0.3)_70%,#1C1C1E_100%)]"
-                    : "bg-[#090614]"
+                    ? "border-app-green/20 bg-metric-featured"
+                    : "bg-surface-raised"
                 }`}
               >
                 <p className="font-sf-pro text-sm text-white">{metric.label}</p>
@@ -89,14 +89,14 @@ export default async function POSTerminalDetailsPage({
           </div>
         </div>
 
-        <div className="rounded-[20px] bg-[#060607] p-[15px]">
-          <div className="relative mb-3 h-[118px] overflow-hidden rounded-[12px] border border-light-gray/10 bg-[#e9e7de]">
-            <div className="absolute inset-0 opacity-70 [background-image:linear-gradient(25deg,transparent_46%,#c7c5bc_47%,#c7c5bc_49%,transparent_50%),linear-gradient(115deg,transparent_46%,#d7c24d_47%,#d7c24d_49%,transparent_50%)] [background-size:55px_42px]" />
+        <div className="rounded-[20px] bg-device-dark p-[15px]">
+          <div className="relative mb-3 h-[118px] overflow-hidden rounded-[12px] border border-light-gray/10 bg-device-paper">
+            <div className="absolute inset-0 opacity-70 [background-image:linear-gradient(25deg,transparent_46%,var(--device-label)_47%,var(--device-label)_49%,transparent_50%),linear-gradient(115deg,transparent_46%,var(--device-muted)_47%,var(--device-muted)_49%,transparent_50%)] [background-size:55px_42px]" />
             <MapPin className="absolute left-1/2 top-1/2 size-7 -translate-x-1/2 -translate-y-1/2 text-app-red" fill="currentColor" />
           </div>
-          <p className="font-sf-pro text-sm text-[#8E8E93]">Location Details</p>
-          <p className="font-sf-pro text-base font-bold text-[#BEC2DA]">{terminal.location}</p>
-          <p className="font-sf-pro text-sm text-[#8E8E93]">{terminal.address}</p>
+          <p className="font-sf-pro text-sm text-ink-muted">Location Details</p>
+          <p className="font-sf-pro text-base font-bold text-ink-soft">{terminal.location}</p>
+          <p className="font-sf-pro text-sm text-ink-muted">{terminal.address}</p>
         </div>
       </section>
 
@@ -129,10 +129,10 @@ export default async function POSTerminalDetailsPage({
           <tbody>
             {terminalTransactions.map((transaction) => (
               <tr key={transaction.id} className="h-[43px]">
-                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-[#090614] px-[15px] font-bold text-white">{transaction.id}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-white">{transaction.amount}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-[#BEC2DA]">{transaction.time}</td>
-                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-[#090614] px-[15px]">
+                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-surface-raised px-[15px] font-bold text-white">{transaction.id}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-white">{transaction.amount}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-ink-soft">{transaction.time}</td>
+                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-surface-raised px-[15px]">
                   <span className={`ml-auto block w-[107px] rounded-[7px] px-2 py-1 text-center ${transaction.status === "Success" ? "bg-app-green/5 text-app-green" : "bg-app-red/5 text-app-red"}`}>
                     {transaction.status}
                   </span>
@@ -150,8 +150,8 @@ export default async function POSTerminalDetailsPage({
           <div className="grid grid-cols-2 gap-2.5">
             {["Logout", "Initiated Transaction", "Login", "Changed password", "Login", "Changed password"].map((activity, index) => (
               <div key={`${activity}-${index}`} className="flex items-center gap-3 font-sf-pro text-xs">
-                <span className="text-[#8E8E93]">13:10/11 Jan 2026</span>
-                <span className="flex-1 rounded-[7px] border border-light-gray/10 bg-[#090614] px-2 py-1.5 text-app-yellow">{activity}</span>
+                <span className="text-ink-muted">13:10/11 Jan 2026</span>
+                <span className="flex-1 rounded-[7px] border border-light-gray/10 bg-surface-raised px-2 py-1.5 text-app-yellow">{activity}</span>
               </div>
             ))}
           </div>
@@ -166,7 +166,7 @@ export default async function POSTerminalDetailsPage({
             ].map(([title, detail, tone]) => (
               <div key={title} className={`rounded-[8px] border p-2.5 ${tone === "red" ? "border-app-red/20 bg-app-red/15" : tone === "yellow" ? "border-app-yellow/20 bg-app-yellow/15" : "border-light-gray/10 bg-light-gray/10"}`}>
                 <p className="font-sf-pro text-sm font-bold text-white">{title}</p>
-                <p className={`font-sf-pro text-xs ${tone === "red" ? "text-app-red" : tone === "yellow" ? "text-app-yellow" : "text-[#BEC2DA]"}`}>{detail}</p>
+                <p className={`font-sf-pro text-xs ${tone === "red" ? "text-app-red" : tone === "yellow" ? "text-app-yellow" : "text-ink-soft"}`}>{detail}</p>
               </div>
             ))}
           </div>

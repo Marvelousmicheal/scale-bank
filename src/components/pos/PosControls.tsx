@@ -18,7 +18,7 @@ export function ActionButton({
 }) {
   const Icon = icon === "upload" ? Upload : Download;
   const styles = {
-    primary: "border-app-blue bg-[#2999dc] text-white",
+    primary: "border-app-blue bg-action-blue text-white",
     outline: "border-app-blue text-app-blue",
     muted: "border-white text-white",
   };
@@ -36,13 +36,13 @@ export function ActionButton({
 
 export function SearchField({ placeholder }: { placeholder: string }) {
   return (
-    <label className="flex h-[30px] items-center gap-2.5 rounded-[8px] border border-light-gray/10 bg-[#090614] px-2.5">
-      <Search className="size-5 shrink-0 text-[#BEC2DA]" />
+    <label className="flex h-[30px] items-center gap-2.5 rounded-[8px] border border-light-gray/10 bg-surface-raised px-2.5">
+      <Search className="size-5 shrink-0 text-ink-soft" />
       <input
         type="search"
         aria-label={placeholder}
         placeholder={placeholder}
-        className="min-w-0 flex-1 bg-transparent font-sf-pro text-sm text-white outline-none placeholder:text-[#8E8E93]"
+        className="min-w-0 flex-1 bg-transparent font-sf-pro text-sm text-white outline-none placeholder:text-ink-muted"
       />
     </label>
   );
@@ -59,10 +59,10 @@ export function FilterButton({
   return (
     <button
       type="button"
-      className="flex h-[45px] flex-1 items-center justify-between rounded-[8px] border border-light-gray/10 bg-[#090614] px-[15px] font-sf-pro text-sm font-bold text-[#8E8E93]"
+      className="flex h-[45px] flex-1 items-center justify-between rounded-[8px] border border-light-gray/10 bg-surface-raised px-[15px] font-sf-pro text-sm font-bold text-ink-muted"
     >
       {children}
-      <Icon className="size-5 text-[#BEC2DA]" />
+      <Icon className="size-5 text-ink-soft" />
     </button>
   );
 }

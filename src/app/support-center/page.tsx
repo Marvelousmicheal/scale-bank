@@ -18,7 +18,7 @@ function MetricCard({
     <article
       className={`relative h-[94px] rounded-[20px] border border-light-gray/5 px-[15px] py-[18px] ${
         metric.featured
-          ? "border-app-green/20 bg-[linear-gradient(135deg,rgba(16,151,50,0.3)_70%,#1C1C1E_100%)]"
+          ? "border-app-green/20 bg-metric-featured"
           : "bg-app-black"
       }`}
     >
@@ -42,7 +42,7 @@ function MetricCard({
             metric.warning || metric.danger
               ? "text-app-yellow"
               : metric.change === "0%"
-                ? "text-[#8E8E93]"
+                ? "text-ink-muted"
                 : "text-app-green"
           }`}
         >
@@ -66,17 +66,17 @@ function FeeInput({
 }) {
   return (
     <label className="min-w-0 flex-1">
-      <span className="mb-2 block font-sf-pro text-sm text-[#BEC2DA]">{label}</span>
-      <span className="flex h-[45px] items-center justify-between rounded-[12px] border border-light-gray/10 bg-[#101011] px-3 font-sf-pro text-sm text-[#8E8E93]">
+      <span className="mb-2 block font-sf-pro text-sm text-ink-soft">{label}</span>
+      <span className="flex h-[45px] items-center justify-between rounded-[12px] border border-light-gray/10 bg-surface-input px-3 font-sf-pro text-sm text-ink-muted">
         {value}
         {suffix && (
           <span className="flex items-center gap-4">
             {suffix}
-            <ChevronDown className="size-5 text-[#BEC2DA]" />
+            <ChevronDown className="size-5 text-ink-soft" />
           </span>
         )}
       </span>
-      {note && <span className="mt-1 block font-sf-pro text-xs text-[#8E8E93]">{note}</span>}
+      {note && <span className="mt-1 block font-sf-pro text-xs text-ink-muted">{note}</span>}
     </label>
   );
 }
@@ -89,14 +89,14 @@ function FeeSectionHeader({
   description: string;
 }) {
   return (
-    <div className="flex min-h-[65px] items-center justify-between rounded-[12px] bg-[linear-gradient(110deg,#171717,#222)] px-2.5">
+    <div className="flex min-h-[65px] items-center justify-between rounded-[12px] bg-panel-gradient px-2.5">
       <div>
         <h3 className="font-sf-pro text-base font-bold text-white">{title}</h3>
-        <p className="font-sf-pro text-sm text-[#8E8E93]">{description}</p>
+        <p className="font-sf-pro text-sm text-ink-muted">{description}</p>
       </div>
       <button
         disabled
-        className="h-[45px] w-[170px] rounded-[12px] bg-app-blue/60 font-sf-pro text-base font-bold text-[#8E8E93]"
+        className="h-[45px] w-[170px] rounded-[12px] bg-app-blue/60 font-sf-pro text-base font-bold text-ink-muted"
       >
         Update Fees
       </button>
@@ -114,9 +114,9 @@ export default function SupportCenterPage() {
           <h2 className="font-sf-pro text-base font-bold text-white">Dispute Metrics</h2>
           <div className="flex h-[42px] w-[254px] items-center justify-between rounded-[12px] border border-app-blue px-[15px] font-sf-pro text-base">
             <span className="font-bold text-app-blue">Daily</span>
-            <span className="text-[#8E8E93]">Weekly</span>
-            <span className="text-[#8E8E93]">Monthly</span>
-            <span className="text-[#8E8E93]">Yearly</span>
+            <span className="text-ink-muted">Weekly</span>
+            <span className="text-ink-muted">Monthly</span>
+            <span className="text-ink-muted">Yearly</span>
           </div>
         </div>
         <div className="space-y-3">
@@ -131,7 +131,7 @@ export default function SupportCenterPage() {
       <section className="flex min-h-[94px] items-center justify-between rounded-[12px] border border-light-gray/10 bg-app-black px-[15px]">
         <div>
           <h2 className="font-sf-pro text-xl font-bold text-white">Fees and Pricing</h2>
-          <p className="font-sf-pro text-sm text-[#8E8E93]">Transaction costs across ecosystem</p>
+          <p className="font-sf-pro text-sm text-ink-muted">Transaction costs across ecosystem</p>
         </div>
         <div className="flex min-h-[64px] w-[430px] items-center gap-3 rounded-[12px] border border-app-yellow/10 bg-app-yellow/15 px-[15px]">
           <AlertTriangle className="size-6 shrink-0 text-app-yellow" fill="currentColor" />
@@ -143,12 +143,12 @@ export default function SupportCenterPage() {
       </section>
 
       <section className="rounded-[12px] border border-light-gray/10 bg-app-black p-[15px]">
-        <div className="rounded-[12px] bg-[#050506] p-2.5">
+        <div className="rounded-[12px] bg-surface-base p-2.5">
           <FeeSectionHeader title="Consumer Fees" description="Fees charged to individual users" />
           <div className="mt-6">
             <div className="mb-4 flex items-center justify-between">
               <h3 className="font-sf-pro text-base font-bold text-white">Wallet → Bank Transfer</h3>
-              <Tag className="size-5 text-[#FFC400]" fill="currentColor" />
+              <Tag className="size-5 text-accent-gold" fill="currentColor" />
             </div>
             <div className="flex gap-2.5">
               <FeeInput label="Standard Fee" value="₦20" />
@@ -160,7 +160,7 @@ export default function SupportCenterPage() {
       </section>
 
       <section className="rounded-[12px] border border-light-gray/10 bg-app-black p-[15px]">
-        <div className="rounded-[12px] bg-[#050506] p-2.5">
+        <div className="rounded-[12px] bg-surface-base p-2.5">
           <FeeSectionHeader
             title="Merchant MDR (Business Fees)"
             description="Merchant Discount Rate for business transactions"
@@ -170,7 +170,7 @@ export default function SupportCenterPage() {
             <div>
               <div className="mb-4 flex items-center justify-between">
                 <h3 className="font-sf-pro text-base font-bold text-white">Pay-with-Transfer</h3>
-                <Tag className="size-5 text-[#FFC400]" fill="currentColor" />
+                <Tag className="size-5 text-accent-gold" fill="currentColor" />
               </div>
               <div className="flex gap-2.5">
                 <FeeInput label="Standard Tier" value="1.30%" suffix="Percentage" note="Cap: ₦1,500" />

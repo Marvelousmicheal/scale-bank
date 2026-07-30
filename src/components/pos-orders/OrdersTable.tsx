@@ -23,7 +23,7 @@ const orderStyles = {
   Delivered: "bg-app-green/5 text-app-green",
   Processing: "bg-app-blue/5 text-app-blue",
   Pending: "bg-app-yellow/5 text-app-yellow",
-  Shipped: "bg-light-gray/10 text-[#DADADA]",
+  Shipped: "bg-light-gray/10 text-ink-bright",
   Cancelled: "bg-app-red/5 text-app-red",
 };
 
@@ -59,21 +59,21 @@ export default function OrdersTable() {
                 }}
                 className="h-[52px] cursor-pointer outline-none transition-colors hover:[&>td]:bg-white/[0.025] focus-visible:[&>td]:border-app-blue/60"
               >
-                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-[#090614] px-[15px] text-base font-bold text-white">
+                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-surface-raised px-[15px] text-base font-bold text-white">
                   {order.id}
                 </td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px]">
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px]">
                   <p className="text-base font-bold text-white">{order.business}</p>
-                  <p className="text-base text-[#565656]">{locations[order.id]}</p>
+                  <p className="text-base text-ink-dim">{locations[order.id]}</p>
                 </td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-base text-[#565656]">{order.model}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-base font-bold text-white">{order.quantity}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-base text-white">{order.totalPrice}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px]">
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-base text-ink-dim">{order.model}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-base font-bold text-white">{order.quantity}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-base text-white">{order.totalPrice}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px]">
                   <span className={`block w-[107px] rounded-[7px] px-2 py-1 text-center ${paymentStyles[order.paymentStatus]}`}>{order.paymentStatus}</span>
                 </td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-base text-[#565656]">{order.orderDate}</td>
-                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-[#090614] px-[15px]">
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-base text-ink-dim">{order.orderDate}</td>
+                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-surface-raised px-[15px]">
                   <span className={`block w-[107px] rounded-[7px] px-2 py-1 text-center ${orderStyles[order.status]}`}>{order.status}</span>
                 </td>
               </tr>

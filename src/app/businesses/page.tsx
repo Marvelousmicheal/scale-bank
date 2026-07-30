@@ -21,9 +21,9 @@ export default function BusinessesPage() {
               <p className="text-app-blue font-bold text-base font-sf-pro">
                 Daily
               </p>
-              <p className="text-base text-[#8E8E93] font-sf-pro">Weekly</p>
-              <p className="text-base text-[#8E8E93] font-sf-pro">Monthly</p>
-              <p className="text-base text-[#8E8E93] font-sf-pro">Yearly</p>
+              <p className="text-base text-ink-muted font-sf-pro">Weekly</p>
+              <p className="text-base text-ink-muted font-sf-pro">Monthly</p>
+              <p className="text-base text-ink-muted font-sf-pro">Yearly</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -31,7 +31,7 @@ export default function BusinessesPage() {
               className="w-[210px]  px-[25px] py-[18px] rounded-[20px] flex flex-1 flex-col gap-0.5 border border-app-green/20 "
               style={{
                 background:
-                  "linear-gradient(135deg, rgba(16, 151, 50, 0.3) 70%, #1C1C1E 100%)",
+                  "var(--metric-featured)",
               }}
             >
               <p className="text-sm text-white font-medium font-sf-pro ">
@@ -67,16 +67,16 @@ export default function BusinessesPage() {
             </div>
           </div>
         </div>
-        <div className="px-[15px] py-5 rounded-[12px] bg-[#0C0A17] border border-[#BEC2DA]/10 flex flex-col gap-[25px] ">
+        <div className="px-[15px] py-5 rounded-[12px] bg-app-black border border-ink-soft/10 flex flex-col gap-[25px] ">
           <div className="flex items-center justify-between ">
             <p className="font-bold tesxt-xl text-white font-sf-pro">
               Business List
             </p>
             <div className="w-[154px] bg-app-blue px-[15px] py-2.5 rounded-[12px] flex items-center justify-center gap-2.5 ">
-              <p className="font-sf-pro font-bold text-base text-[#F2F2F7]">
+              <p className="font-sf-pro font-bold text-base text-ink-pale">
                 Export
               </p>
-              <div className="size-6 bg-red-300"></div>
+              <div className="size-6 bg-app-red"></div>
             </div>
           </div>
           <div className="space-y-5">
@@ -90,24 +90,24 @@ export default function BusinessesPage() {
             </div>
             <div className="flex items-center gap-5">
               <div className="flex-1 flex items-center justify-between h-[45px] border border-light-gray/10 rounded-[8px] px-[15px] py-[5px]">
-                <p className="text-sm font-bold text-[#8E8E93] font-sf-pro">KYB Status</p>
-                <div className="size-[24px] bg-red-400"></div>
+                <p className="text-sm font-bold text-ink-muted font-sf-pro">KYB Status</p>
+                <div className="size-[24px] bg-app-red"></div>
               </div>
               <div className="flex-1 flex items-center justify-between h-[45px] border border-light-gray/10 rounded-[8px] px-[15px] py-[5px]">
-                <p className="text-sm font-bold text-[#8E8E93] font-sf-pro">Business Tier</p>
-                <div className="size-[24px] bg-red-400"></div>
+                <p className="text-sm font-bold text-ink-muted font-sf-pro">Business Tier</p>
+                <div className="size-[24px] bg-app-red"></div>
               </div>
               <div className="flex-1 flex items-center justify-between h-[45px] border border-light-gray/10 rounded-[8px] px-[15px] py-[5px]">
-                <p className="text-sm font-bold text-[#8E8E93] font-sf-pro">Account Status</p>
-                <div className="size-[24px] bg-red-400"></div>
+                <p className="text-sm font-bold text-ink-muted font-sf-pro">Account Status</p>
+                <div className="size-[24px] bg-app-red"></div>
               </div>
               <div className="flex-1 flex items-center justify-between h-[45px] border border-light-gray/10 rounded-[8px] px-[15px] py-[5px]">
-                <p className="text-sm font-bold text-[#8E8E93] font-sf-pro">Date Registered</p>
-                <div className="size-[24px] bg-red-400"></div>
+                <p className="text-sm font-bold text-ink-muted font-sf-pro">Date Registered</p>
+                <div className="size-[24px] bg-app-red"></div>
               </div>
               <div className="w-[135px] flex items-center justify-between h-[45px] border border-light-gray/10 rounded-[8px] px-[15px] py-[5px] bg-app-blue/25">
                 <p className="text-sm font-bold text-white font-sf-pro">Clear Filter</p>
-                <div className="size-[24px] bg-red-400"></div>
+                <div className="size-[24px] bg-app-red"></div>
               </div>
             </div>
           </div>

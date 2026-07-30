@@ -39,16 +39,16 @@ export default function BusinessTable() {
             className="border-none hover:bg-transparent group h-[43px] cursor-pointer"
             onClick={() => router.push(`/businesses/${biz.id}`)}
           >
-            <TableCell className="bg-[#090614] border-y border-l border-[#BEC2DA]/10 rounded-l-[8px] px-[15px] text-base font-bold text-white font-sf-pro">
+            <TableCell className="bg-surface-raised border-y border-l border-ink-soft/10 rounded-l-[8px] px-[15px] text-base font-bold text-white font-sf-pro">
               {biz.name}
             </TableCell>
-            <TableCell className="bg-[#090614] border-y border-[#BEC2DA]/10 px-[15px] text-sm font-bold capitalize text-white font-sf-pro">
+            <TableCell className="bg-surface-raised border-y border-ink-soft/10 px-[15px] text-sm font-bold capitalize text-white font-sf-pro">
               {biz.id}
             </TableCell>
-            <TableCell className="bg-[#090614] border-y border-[#BEC2DA]/10 px-[15px] text-base font-normal text-[#565656] font-sf-pro">
+            <TableCell className="bg-surface-raised border-y border-ink-soft/10 px-[15px] text-base font-normal text-ink-dim font-sf-pro">
               {biz.owner}
             </TableCell>
-            <TableCell className="bg-[#090614] border-y border-[#BEC2DA]/10 px-[15px] font-sf-pro">
+            <TableCell className="bg-surface-raised border-y border-ink-soft/10 px-[15px] font-sf-pro">
               <div className={`flex items-center gap-2.5 text-base font-medium ${
                 biz.kyb === 'Verified'
                   ? 'text-app-blue'
@@ -66,10 +66,10 @@ export default function BusinessTable() {
                 {biz.kyb}
               </div>
             </TableCell>
-            <TableCell className="bg-[#090614] border-y border-[#BEC2DA]/10 px-[15px] text-base font-medium text-white font-sf-pro">
+            <TableCell className="bg-surface-raised border-y border-ink-soft/10 px-[15px] text-base font-medium text-white font-sf-pro">
               {biz.volume}
             </TableCell>
-            <TableCell className="bg-[#090614] border-y border-r border-[#BEC2DA]/10 rounded-r-[8px] px-[15px]">
+            <TableCell className="bg-surface-raised border-y border-r border-ink-soft/10 rounded-r-[8px] px-[15px]">
               <div className="flex justify-end">
                 <div className={`w-[107px] rounded-[7px] p-[6px] text-center text-base font-normal font-sf-pro ${
                   biz.status === 'Active'

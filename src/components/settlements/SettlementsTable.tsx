@@ -31,12 +31,12 @@ export default function SettlementsTable() {
                 }}
                 className="h-[52px] cursor-pointer outline-none transition-colors hover:[&>td]:bg-white/[0.025] focus-visible:[&>td]:border-app-blue/60"
               >
-                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-[#090614] px-[15px] text-base font-bold text-white">{settlement.displayId}</td>
-                <td className="max-w-[300px] border-y border-light-gray/10 bg-[#090614] px-[15px] text-base text-[#565656]">{settlement.business}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-base text-white">{settlement.amount}</td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-sm text-[#BEC2DA]"><p>{settlement.bank}</p><p className="text-[#565656]">{settlement.account}</p></td>
-                <td className="border-y border-light-gray/10 bg-[#090614] px-[15px] text-sm text-[#BEC2DA]"><p>{settlement.date}</p><p className="text-xs text-[#565656]">{settlement.time}</p></td>
-                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-[#090614] px-[15px]"><span className={`block w-[107px] rounded-[7px] px-2 py-1 text-center ${statusStyles[settlement.status]}`}>{settlement.status}</span></td>
+                <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-surface-raised px-[15px] text-base font-bold text-white">{settlement.displayId}</td>
+                <td className="max-w-[300px] border-y border-light-gray/10 bg-surface-raised px-[15px] text-base text-ink-dim">{settlement.business}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-base text-white">{settlement.amount}</td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-sm text-ink-soft"><p>{settlement.bank}</p><p className="text-ink-dim">{settlement.account}</p></td>
+                <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-sm text-ink-soft"><p>{settlement.date}</p><p className="text-xs text-ink-dim">{settlement.time}</p></td>
+                <td className="rounded-r-[8px] border-y border-r border-light-gray/10 bg-surface-raised px-[15px]"><span className={`block w-[107px] rounded-[7px] px-2 py-1 text-center ${statusStyles[settlement.status]}`}>{settlement.status}</span></td>
               </tr>
             ))}
           </tbody>

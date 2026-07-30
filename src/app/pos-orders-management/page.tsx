@@ -6,13 +6,14 @@ import {
   FilterButton,
   SearchField,
 } from "@/components/pos/PosControls";
+import { MetricCard } from "@/components/dashboard/DashboardPrimitives";
 
 const metrics = [
   { label: "Total Orders", value: "1,243", change: "+2.4%", featured: true },
   { label: "Pending Approval", value: "1,225", change: "+1.8%" },
-  { label: "Processing", value: "18", change: "-10.2%", warning: true },
-  { label: "Processing", value: "6", change: "0%" },
-  { label: "Cancelled", value: "42", change: "-12.2%", warning: true },
+  { label: "Processing", value: "18", change: "-10.2%", changeTone: "warning" as const },
+  { label: "Processing", value: "6", change: "0%", changeTone: "muted" as const },
+  { label: "Cancelled", value: "42", change: "-12.2%", changeTone: "warning" as const },
 ];
 
 export default function PosOrdersManagementPage() {
@@ -24,20 +25,7 @@ export default function PosOrdersManagementPage() {
       />
 
       <section className="grid grid-cols-5 gap-3">
-        {metrics.map((metric, index) => (
-          <article
-            key={`${metric.label}-${index}`}
-            className={`relative h-[94px] rounded-[20px] border border-light-gray/5 px-[15px] py-[18px] ${
-              metric.featured
-                ? "border-app-green/20 bg-[linear-gradient(135deg,rgba(16,151,50,0.3)_70%,#1C1C1E_100%)]"
-                : "bg-app-black"
-            }`}
-          >
-            <p className="font-sf-pro text-sm font-medium text-white">{metric.label}</p>
-            <p className={`font-sf-pro text-2xl font-bold ${metric.featured ? "text-white" : "text-app-green"}`}>{metric.value}</p>
-            <span className={`absolute bottom-[30px] right-[15px] font-sf-pro text-sm ${metric.warning ? "text-app-yellow" : metric.change === "0%" ? "text-[#8E8E93]" : "text-app-green"}`}>{metric.change}</span>
-          </article>
-        ))}
+        {metrics.map((metric, index) => <MetricCard key={`${metric.label}-${index}`} metric={metric} />)}
       </section>
 
       <section className="rounded-[12px] border border-light-gray/10 bg-app-black px-[15px] py-5">

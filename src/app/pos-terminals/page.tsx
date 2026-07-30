@@ -29,7 +29,7 @@ export default function POSTerminalsPage() {
             key={metric.label}
             className={`relative h-[94px] rounded-[20px] border border-light-gray/5 px-[15px] py-[18px] ${
               metric.featured
-                ? "border-app-green/20 bg-[linear-gradient(135deg,rgba(16,151,50,0.3)_70%,#1C1C1E_100%)]"
+                ? "border-app-green/20 bg-metric-featured"
                 : "bg-app-black"
             }`}
           >
@@ -39,7 +39,7 @@ export default function POSTerminalsPage() {
             </p>
             <span
               className={`absolute bottom-[30px] right-[15px] font-sf-pro text-sm ${
-                metric.warning ? "text-app-yellow" : metric.change === "0%" ? "text-[#8E8E93]" : "text-app-green"
+                metric.warning ? "text-app-yellow" : metric.change === "0%" ? "text-ink-muted" : "text-app-green"
               }`}
             >
               {metric.change}
