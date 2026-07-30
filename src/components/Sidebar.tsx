@@ -7,17 +7,27 @@ import Image from 'next/image';
 export function Sidebar() {
   const pathname = usePathname();
   const links = [
-    { name: 'Dashboard', href: '/' }, // The home page is now our dashboard!
+    { name: 'Dashboard', href: '/' },
     { name: 'Users', href: '/users' },
     { name: 'Businesses', href: '/businesses' },
-    { name: 'Merchandise', href: '/merchandise' },
+    {
+      name: 'KYC & KYB Verification',
+      href: '/kyc-kyb-verification',
+    },
+    {
+      name: 'POS Orders Management',
+      href: '/pos-orders-management',
+    },
     { name: 'POS Terminals', href: '/pos-terminals' },
     { name: 'Transactions', href: '/transactions' },
     { name: 'Settlements', href: '/settlements' },
-    { name: 'Dispute and Compliance', href: '/dispute-and-compliance' },
-    { name: 'Reports and Analysis', href: '/reports-and-analysis' },
+    {
+      name: 'Disputes & Compliance',
+      href: '/dispute-and-compliance',
+    },
+    { name: 'Reports & Analytics', href: '/reports-and-analysis' },
     { name: 'Support Center', href: '/support-center' },
-    { name: 'System Control', href: '/system-control' },
+    { name: 'System Controls', href: '/system-control' },
   ];
 
   return (
@@ -58,7 +68,6 @@ export function Sidebar() {
           href="/login" 
           className="flex gap-2.5 w-[258px] bg-app-light-red/15 rounded-[10px] mx-auto  px-3 h-[45px] text-app-light-red  items-center text-base font-gilmer "
         >
-
           <div className='w-[24px] h-[24px] bg-red-500'></div>
           Logout
         </Link>
