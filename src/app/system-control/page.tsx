@@ -1,8 +1,11 @@
+import PageHeader from "@/components/PageHeader";
+import SystemControlTabs from "@/components/system-control/SystemControlTabs";
+
 export default function SystemControlPage() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold">System Control and Admin Management</h1>
-      <p>This is the dummy page for System Control and Admin Management.</p>
+    <div className="flex min-h-full flex-col gap-[30px] px-[25px] pb-[30px] pt-[46px]">
+      <PageHeader title="System and Control Settings" />
+      <SystemControlTabs />
     </div>
   );
 }
