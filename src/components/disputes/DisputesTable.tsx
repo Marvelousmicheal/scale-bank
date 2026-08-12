@@ -25,7 +25,7 @@ export default function DisputesTable() {
           </tr></thead>
           <tbody>
             {disputes.map((dispute) => (
-              <tr key={dispute.slug} tabIndex={0} onClick={() => router.push(`/dispute-and-compliance/${dispute.slug}`)} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") router.push(`/dispute-and-compliance/${dispute.slug}`); }} className="h-[52px] cursor-pointer outline-none hover:[&>td]:bg-white/[0.025] focus-visible:[&>td]:border-app-blue/60">
+              <tr key={dispute.slug} tabIndex={0} onClick={() => router.push(`/dispute-and-compliance/${dispute.slug}`)} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") router.push(`/dispute-and-compliance/${dispute.slug}`); }} className="h-[52px] cursor-pointer outline-none focus-visible:[&>td]:border-app-blue/60">
                 <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-surface-raised px-[15px] text-base font-bold">{dispute.disputeId}</td>
                 <td className="border-y border-light-gray/10 bg-surface-raised px-[15px] text-base font-bold">{dispute.transactionId}</td>
                 <td className="border-y border-light-gray/10 bg-surface-raised px-[15px]"><p className="text-sm text-ink-soft">{dispute.user}</p><p className="text-xs text-ink-dim">{dispute.business}</p></td>

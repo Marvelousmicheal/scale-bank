@@ -1,37 +1,61 @@
+"use client";
+
 export default function TablePagination({
   showing = "Showing 1 to 20 of 100 entries",
   total = 5,
   current = 1,
+  onPageChange,
+  ariaLabel = "Table pagination",
 }: {
   showing?: string;
   total?: number;
   current?: number;
+  onPageChange?: (page: number) => void;
+  ariaLabel?: string;
 }) {
+  const pageCount = Math.max(total, 1);
+  const activePage = Math.min(Math.max(current, 1), pageCount);
+
   return (
-    <div className="flex items-center justify-between pt-4">
-      <p className="font-sf-pro font-bold text-sm text-ink-bright">{showing}</p>
+    <nav aria-label={ariaLabel} className="flex items-center justify-between pt-4">
+      <p className="font-sf-pro text-sm font-bold text-ink-bright">{showing}</p>
       <div className="flex items-center gap-5">
-        <div className="px-2.5 py-1.5 bg-app-green/5 w-[75px] text-center h-[30px] rounded-[7px]">
-          <p className="font-normal text-sm text-app-green/50 font-sf-pro">Previous</p>
-        </div>
+        <button
+          type="button"
+          disabled={!onPageChange || activePage === 1}
+          onClick={() => onPageChange?.(activePage - 1)}
+          className="h-[30px] w-[75px] rounded-[7px] bg-app-green/5 px-2.5 py-1.5 text-center font-sf-pro text-sm font-normal text-app-green transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-app-green disabled:cursor-not-allowed disabled:text-app-green/50"
+        >
+          Previous
+        </button>
         <div className="flex items-center gap-2.5">
-          {Array.from({ length: total }, (_, i) => i + 1).map((page) => (
-            <div
+          {Array.from({ length: pageCount }, (_, index) => index + 1).map((page) => (
+            <button
+              type="button"
               key={page}
-              className={`size-[37px] text-center flex items-center justify-center rounded-[8px] ${
-                page === current
+              aria-label={`Go to page ${page}`}
+              aria-current={page === activePage ? "page" : undefined}
+              disabled={!onPageChange}
+              onClick={() => onPageChange?.(page)}
+              className={`flex size-[37px] items-center justify-center rounded-[8px] text-center font-sf-pro text-sm font-bold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-app-green disabled:cursor-default ${
+                page === activePage
                   ? "bg-accent-purple"
-                  : "bg-surface-raised border border-ink-soft/10"
+                  : "border border-ink-soft/10 bg-surface-raised"
               }`}
             >
-              <p className="font-sf-pro font-bold text-sm text-white">{page}</p>
-            </div>
+              {page}
+            </button>
           ))}
         </div>
-        <div className="px-2.5 py-1.5 w-[75px] text-center bg-app-green/5 h-[30px] rounded-[7px]">
-          <p className="font-normal text-sm text-app-green font-sf-pro">Next</p>
-        </div>
+        <button
+          type="button"
+          disabled={!onPageChange || activePage === pageCount}
+          onClick={() => onPageChange?.(activePage + 1)}
+          className="h-[30px] w-[75px] rounded-[7px] bg-app-green/5 px-2.5 py-1.5 text-center font-sf-pro text-sm font-normal text-app-green transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-app-green disabled:cursor-not-allowed disabled:text-app-green/50"
+        >
+          Next
+        </button>
       </div>
-    </div>
+    </nav>
   );
 }

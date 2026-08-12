@@ -2,6 +2,17 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Create `.env.local` in the project root:
+
+```env
+SCALE9_API_BASE_URL=https://api.scale9.ng
+SCALE9_AUTH_REQUIRED=true
+```
+
+Authentication is required by default. Set `SCALE9_AUTH_REQUIRED=false` only when intentionally developing without route protection.
+
+Public Scale9 flows are available at `/login`, `/login/otp`, `/login/forgot-password`, `/login/reset-password`, `/pay/{slug}`, and `/checkout/{identifier}`. Payment pages require valid identifiers created by the Scale9 backend.
+
 First, run the development server:
 
 ```bash

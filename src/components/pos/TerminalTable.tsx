@@ -39,7 +39,7 @@ export default function TerminalTable() {
                     router.push(`/pos-terminals/${terminal.id}`);
                   }
                 }}
-                className="h-[52px] cursor-pointer text-base outline-none transition-colors hover:[&>td]:bg-white/[0.025] focus-visible:[&>td]:border-app-blue/60"
+                className="h-[52px] cursor-pointer text-base outline-none focus-visible:[&>td]:border-app-blue/60"
               >
                 <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-surface-raised px-[15px] font-bold text-white">
                   {terminal.id}
@@ -76,4 +76,3 @@ export default function TerminalTable() {
     </div>
   );
 }
-

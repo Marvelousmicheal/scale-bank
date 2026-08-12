@@ -6,6 +6,8 @@ import Image from 'next/image';
 
 export function Sidebar() {
   const pathname = usePathname();
+  if (pathname.startsWith('/login') || pathname.startsWith('/pay') || pathname.startsWith('/checkout')) return null;
+
   const links = [
     { name: 'Dashboard', href: '/' },
     { name: 'Users', href: '/users' },
@@ -64,13 +66,15 @@ export function Sidebar() {
       </nav>
 
       <div className="mb-10 pt-4  ">
-        <Link
-          href="/login"
-          className="flex gap-2.5 w-[258px] bg-app-light-red/15 rounded-[10px] mx-auto  px-3 h-[45px] text-app-light-red  items-center text-base font-sf-pro "
-        >
-          <div className='w-[24px] h-[24px] bg-app-red'></div>
-          Logout
-        </Link>
+        <form action="/api/auth/logout" method="post" className="mx-auto w-[258px]">
+          <button
+            type="submit"
+            className="flex h-[45px] w-full items-center gap-2.5 rounded-[10px] bg-app-light-red/15 px-3 text-base text-app-light-red transition-colors hover:bg-app-light-red/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-app-light-red"
+          >
+            <span aria-hidden="true" className='h-[24px] w-[24px] bg-app-red'></span>
+            Logout
+          </button>
+        </form>
       </div>
     </aside>
   );

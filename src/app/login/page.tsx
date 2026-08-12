@@ -1,8 +1,13 @@
+import { Suspense } from "react"
+import { AuthShell } from "@/components/auth/AuthShell"
+import { LoginForm } from "@/components/auth/LoginForm"
+
 export default function LoginPage() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold">Login</h1>
-      <p>This is the dummy page for Login.</p>
-    </div>
-  );
+    <AuthShell title="Welcome back" description="Sign in to manage Scale Bank operations.">
+        <Suspense fallback={<div className="h-72 animate-pulse rounded-xl bg-white/5" />}>
+          <LoginForm />
+        </Suspense>
+    </AuthShell>
+  )
 }

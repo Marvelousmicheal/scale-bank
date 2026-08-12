@@ -29,7 +29,7 @@ export default function SettlementsTable() {
                 onKeyDown={(event) => {
                   if (event.key === "Enter" || event.key === " ") router.push(`/settlements/${settlement.slug}`);
                 }}
-                className="h-[52px] cursor-pointer outline-none transition-colors hover:[&>td]:bg-white/[0.025] focus-visible:[&>td]:border-app-blue/60"
+                className="h-[52px] cursor-pointer outline-none focus-visible:[&>td]:border-app-blue/60"
               >
                 <td className="rounded-l-[8px] border-y border-l border-light-gray/10 bg-surface-raised px-[15px] text-base font-bold text-white">{settlement.displayId}</td>
                 <td className="max-w-[300px] border-y border-light-gray/10 bg-surface-raised px-[15px] text-base text-ink-dim">{settlement.business}</td>

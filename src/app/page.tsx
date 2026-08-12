@@ -338,7 +338,7 @@ export default function DashboardPage() {
           <div className="w-full">
             <Table className="border-separate border-spacing-y-[10px]">
               <TableHeader>
-                <TableRow className="border-none hover:bg-transparent">
+                <TableRow className="border-none">
                   <TableHead className="font-bold text-sm text-white px-[15px] py-[10px] font-sf-pro w-[350px]">Transaction ID</TableHead>
                   <TableHead className="font-bold text-sm text-white px-[15px] py-[10px] font-sf-pro">Channel</TableHead>
                   <TableHead className="font-bold text-sm text-white px-[15px] py-[10px] font-sf-pro w-[450px]">Business</TableHead>
@@ -355,7 +355,7 @@ export default function DashboardPage() {
                   { id: 'TX-789037', channel: 'POS Terminal', business: 'Chicken Republic', amount: '₦184,300,500', time: '2m ago', status: 'Success' },
                   { id: 'TX-789038', channel: 'POS Terminal', business: 'Chicken Republic', amount: '₦184,300,500', time: '2m ago', status: 'Success' },
                 ].map((tx, i) => (
-                  <TableRow key={i} className="border-none hover:bg-transparent group h-[43px]">
+                  <TableRow key={i} className="border-none group h-[43px]">
                     <TableCell className="bg-surface-raised border-y border-l border-ink-soft/10 rounded-l-[8px] px-[15px] text-base font-bold text-white font-sf-pro">
                       {tx.id}
                     </TableCell>
