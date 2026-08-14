@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, Download, X } from "lucide-react";
 
-export default function CreateDisputeModal() {
+export default function CreateDisputeModal({ disabled = false }: { disabled?: boolean }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -18,10 +18,10 @@ export default function CreateDisputeModal() {
   return (
     <>
       <div className="flex gap-2.5">
-        <button type="button" className="flex h-11 items-center gap-2.5 rounded-[12px] border border-app-blue px-6 font-sf-pro text-base font-bold text-app-blue">
+        <button type="button" disabled={disabled} className="flex h-11 items-center gap-2.5 rounded-[12px] border border-app-blue px-6 font-sf-pro text-base font-bold text-app-blue disabled:cursor-not-allowed">
           Export Dispute Report <Download className="size-5" />
         </button>
-        <button type="button" onClick={() => setOpen(true)} className="h-11 rounded-[12px] border border-app-blue bg-action-blue px-6 font-sf-pro text-base font-bold text-white">
+        <button type="button" disabled={disabled} onClick={() => setOpen(true)} className="h-11 rounded-[12px] border border-app-blue bg-action-blue px-6 font-sf-pro text-base font-bold text-white disabled:cursor-not-allowed">
           Create Dispute
         </button>
       </div>

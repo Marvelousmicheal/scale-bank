@@ -34,7 +34,7 @@ export function ActionButton({
   );
 }
 
-export function SearchField({ placeholder }: { placeholder: string }) {
+export function SearchField({ placeholder, value, onChange }: { placeholder: string; value?: string; onChange?: (value: string) => void }) {
   return (
     <label className="flex h-[30px] items-center gap-2.5 rounded-[8px] border border-light-gray/10 bg-surface-raised px-2.5">
       <Search className="size-5 shrink-0 text-ink-soft" />
@@ -42,6 +42,8 @@ export function SearchField({ placeholder }: { placeholder: string }) {
         type="search"
         aria-label={placeholder}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange ? (event) => onChange(event.target.value) : undefined}
         className="min-w-0 flex-1 bg-transparent font-sf-pro text-sm text-white outline-none placeholder:text-ink-muted"
       />
     </label>
@@ -51,14 +53,17 @@ export function SearchField({ placeholder }: { placeholder: string }) {
 export function FilterButton({
   children,
   calendar = false,
+  disabled = false,
 }: {
   children: React.ReactNode;
   calendar?: boolean;
+  disabled?: boolean;
 }) {
   const Icon = calendar ? CalendarDays : ChevronDown;
   return (
     <button
       type="button"
+      disabled={disabled}
       className="flex h-[45px] flex-1 items-center justify-between rounded-[8px] border border-light-gray/10 bg-surface-raised px-[15px] font-sf-pro text-sm font-bold text-ink-muted"
     >
       {children}
@@ -78,4 +83,3 @@ export function ClearFilters() {
     </button>
   );
 }
-

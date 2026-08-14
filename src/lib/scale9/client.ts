@@ -3,7 +3,7 @@ import "server-only"
 import { getScale9ApiUrl } from "@/lib/scale9/config"
 import type { Scale9Envelope } from "@/lib/scale9/types"
 
-type RequestOptions = Omit<RequestInit, "body"> & {
+export type RequestOptions = Omit<RequestInit, "body"> & {
   accessToken?: string
   body?: unknown
   timeoutMs?: number

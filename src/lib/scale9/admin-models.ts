@@ -82,6 +82,13 @@ export type AdminTransaction = {
   updatedAt: string
 }
 
+export type AdminDispute = {
+  id: string
+  reason: string
+  status: string
+  createdAt: string
+}
+
 export type AdminPage<T> = {
   items: T[]
   meta: AdminPagination
@@ -232,5 +239,16 @@ export function toAdminTransaction(value: unknown): AdminTransaction {
     narration: string(source.narration, "—"),
     createdAt: string(source.createdAt),
     updatedAt: string(source.updatedAt),
+  }
+}
+
+export function toAdminDispute(value: unknown): AdminDispute {
+  const source = record(value)
+
+  return {
+    id: string(source.id),
+    reason: string(source.reason, "—"),
+    status: string(source.status, "OPEN"),
+    createdAt: string(source.createdAt),
   }
 }

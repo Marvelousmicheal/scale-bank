@@ -1,10 +1,10 @@
 import "server-only"
 
 import { isScale9AdminRole, refreshScale9Session } from "@/lib/scale9/auth"
-import { Scale9ApiError, scale9Request } from "@/lib/scale9/client"
+import { Scale9ApiError, scale9Request, type RequestOptions } from "@/lib/scale9/client"
 import { clearScale9Session, getScale9Session, setScale9Session } from "@/lib/scale9/session"
 
-export async function scale9AdminRequest<T>(path: string) {
+export async function scale9AdminRequest<T>(path: string, options: Omit<RequestOptions, "accessToken"> = {}) {
   const session = await getScale9Session()
 
   if (!session.accessToken || !session.refreshToken || !isScale9AdminRole(session.role)) {
@@ -12,7 +12,7 @@ export async function scale9AdminRequest<T>(path: string) {
   }
 
   try {
-    return await scale9Request<T>(path, { accessToken: session.accessToken })
+    return await scale9Request<T>(path, { ...options, accessToken: session.accessToken })
   } catch (error) {
     if (!(error instanceof Scale9ApiError) || error.status !== 401) throw error
   }
@@ -20,7 +20,7 @@ export async function scale9AdminRequest<T>(path: string) {
   try {
     const tokens = await refreshScale9Session(session.refreshToken)
     await setScale9Session({ ...tokens, role: session.role })
-    return await scale9Request<T>(path, { accessToken: tokens.accessToken })
+    return await scale9Request<T>(path, { ...options, accessToken: tokens.accessToken })
   } catch (error) {
     await clearScale9Session()
     if (error instanceof Scale9ApiError) throw error
